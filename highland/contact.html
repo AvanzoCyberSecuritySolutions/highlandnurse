@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Highland College of Nursing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#54c5bc',
+                        brandGreenDark: '#4aa7a1'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="min-h-screen bg-gradient-to-br from-brandGreen to-brandGreenDark">
+        
+        <!-- Hero Section -->
+        <div class="relative overflow-hidden">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+                <div class="text-center">
+                    <!-- Back to Home Button -->
+        <div class="absolute top-8 left-4 sm:left-6 lg:left-8">
+            <a href="index.html" class="flex items-center text-white/80 hover:text-white transition-colors duration-300 group">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 mr-2 transform group-hover:-translate-x-1 transition-transform duration-300">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                </svg>
+                <span class="text-sm font-medium">Back to Home</span>
+            </a>
+        </div>
+                    <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 uppercase tracking-wider">
+                        Contact
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-200">
+                            Highland College
+                        </span>
+                    </h1>
+                    <p class="text-xl text-white/90 max-w-3xl mx-auto">
+                        Ready to start your nursing education journey? We're here to guide you every step of the way.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 -mt-12">
+                <!-- Contact Info Cards -->
+                <div class="lg:col-span-1 space-y-6">
+                    <!-- Phone Card -->
+                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gradient-to-r from-blue-500 to-cyan-500 p-3 rounded-full">
+                                <i class="fas fa-phone-alt text-white text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white ml-4 uppercase tracking-wide">Call Us</h3>
+                        </div>
+                        <p class="text-white/80 mb-4">Speak directly with our admissions team</p>
+                        <div class="space-y-2">
+                            <a href="tel:+918740005555" class="block text-orange-300 hover:text-blue-200 transition-colors font-bold">
+                                +91 87400 05555
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Email Card -->
+                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gradient-to-r from-green-500 to-emerald-500 p-3 rounded-full">
+                                <i class="fas fa-envelope text-white text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white ml-4 uppercase tracking-wide">Email Us</h3>
+                        </div>
+                        <p class="text-white/80 mb-4">Send us your inquiries anytime</p>
+                        <div class="space-y-2">
+                            <a href="mailto:reachus@highlandcollegeofnursing.com" class="block text-orange-300 hover:text-green-200 transition-colors text-sm font-medium break-all">
+                                reachus@highlandcollegeofnursing.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Address Card -->
+                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gradient-to-r from-purple-500 to-pink-500 p-3 rounded-full">
+                                <i class="fas fa-map-marker-alt text-white text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white ml-4 uppercase tracking-wide">Visit Us</h3>
+                        </div>
+                        <p class="text-white/80 mb-4">Come visit our campus</p>
+                        <address class="text-orange-300 not-italic leading-relaxed font-medium">
+                            Highland Hospital<br>
+                            Highlands, Mother Theresa Road<br>
+                            Mangalore – 575002
+                        </address>
+                    </div>
+
+                    <!-- Office Hours Card -->
+                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gradient-to-r from-orange-500 to-red-500 p-3 rounded-full">
+                                <i class="fas fa-clock text-white text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white ml-4 uppercase tracking-wide">Office Hours</h3>
+                        </div>
+                        <p class="text-white/80 mb-4">When we're available</p>
+                        <div class="text-green-300 font-medium space-y-1 text-sm">
+                            <p>Monday - Saturday: 9:00 AM - 5:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl">
+                        <div class="flex items-center mb-8">
+                            <div class="w-12 h-12 bg-brandGreen rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-graduation-cap text-white text-xl"></i>
+                            </div>
+                            <h2 class="text-3xl font-bold text-gray-900 uppercase tracking-wide">Get In Touch</h2>
+                        </div>
+
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2 uppercase tracking-wide">First Name</label>
+                                    <input type="text" placeholder="Enter your first name" class="w-full h-12 border-2 border-gray-200 focus:border-brandGreen rounded-xl px-4 focus:outline-none transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2 uppercase tracking-wide">Last Name</label>
+                                    <input type="text" placeholder="Enter your last name" class="w-full h-12 border-2 border-gray-200 focus:border-brandGreen rounded-xl px-4 focus:outline-none transition-colors">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2 uppercase tracking-wide">Email Address</label>
+                                    <input type="email" placeholder="your@email.com" class="w-full h-12 border-2 border-gray-200 focus:border-brandGreen rounded-xl px-4 focus:outline-none transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2 uppercase tracking-wide">Phone Number</label>
+                                    <input type="tel" placeholder="+91 00000 00000" class="w-full h-12 border-2 border-gray-200 focus:border-brandGreen rounded-xl px-4 focus:outline-none transition-colors">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2 uppercase tracking-wide">Inquiry Type</label>
+                                <select class="w-full h-12 border-2 border-gray-200 focus:border-brandGreen rounded-xl px-4 focus:outline-none transition-colors">
+                                    <option value="">Select inquiry type</option>
+                                    <option value="admission">Admission Information</option>
+                                    <option value="courses">Course Details</option>
+                                    <option value="fees">Fee Structure</option>
+                                    <option value="campus">Campus Visit</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2 uppercase tracking-wide">Message</label>
+                                <textarea placeholder="Tell us about your interest in nursing education..." rows="6" class="w-full border-2 border-gray-200 focus:border-brandGreen rounded-xl px-4 py-3 resize-none focus:outline-none transition-colors"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full h-14 bg-gradient-to-r from-brandGreen to-brandGreenDark hover:from-brandGreenDark hover:to-brandGreen text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center uppercase tracking-wider">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions Section -->
+            <div class="mt-20 text-center">
+                <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+                    <h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-wide">Ready to Begin Your Nursing Journey?</h3>
+                    <p class="text-white/80 mb-8 max-w-2xl mx-auto">
+                        Whether you have questions about admissions, courses, or campus life, our team is here to help you take the first step toward a rewarding healthcare career.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="images/application form.pdf" download class="bg-white text-brandGreen hover:bg-gray-100 px-8 py-3 rounded-xl font-semibold transition-colors uppercase tracking-wider">
+                            <i class="fas fa-download mr-2"></i>
+                            Download Application
+                        </a>
+                        <a href="#admissions" class="border border-white text-white hover:bg-white hover:text-brandGreen px-8 py-3 rounded-xl font-semibold transition-all uppercase tracking-wider">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            Admission Info
+                        </a>
+                        <button class="border border-white text-white hover:bg-white hover:text-brandGreen px-8 py-3 rounded-xl font-semibold transition-all uppercase tracking-wider">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            Schedule Visit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+</body>
+</html>

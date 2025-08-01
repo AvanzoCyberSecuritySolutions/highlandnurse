@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highland</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- === 1. LINK TO GOOGLE FONT (ADDED) === -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Custom styles if needed */
+        .hero-brand-green {
+            color: #34a49c;
+        }
+        .hero_bg_box img {
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+             object-position: center;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#34a49c',
+                    },
+                    // === 2. CONFIGURE TAILWIND TO USE THE FONT (ADDED) ===
+                    // fontFamily: {
+                    //     sans: ['Fira Sans', 'sans-serif'], // Sets Fira Sans as the default font
+                    // }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+ <!-- class="font-sans" -->
+<header class="relative text-white min-h-screen flex flex-col"> <!-- Replaces .hero_area -->
+    <!-- Background Image Container -->
+    <div class="absolute inset-0 z-0 overflow-hidden hero_bg_box"> <!-- Replaces .hero_bg_box -->
+        <img src="images/backbr.jpg" alt="Background Shape"
+             class="w-full h-full object-cover object-bottom"> <!-- Ensure image covers -->
+    </div>
+
+    <!-- Navbar -->
+ <nav class="absolute top-0 left-0 right-0 z-30 py-5 md:py-6 bg-white bg-opacity-90 backdrop-blur-sm shadow-md">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <a href="index.html" class="block">
+            <img src="images/Highland_College_of_Nursing_PDF_-1-removebg-preview.png" alt="ORTHOC Logo" class="h-8 md:h-10">
+        </a>
+        <!-- Desktop Menu -->
+<div class="hidden md:flex items-center space-x-5 lg:space-x-8">
+    <a href="index.html" class="text-sm font-medium text-brandGreen hover:opacity-75 transition-opacity duration-200 uppercase">Home</a>
+    <a href="about.html" class="text-sm font-medium text-brandGreen hover:opacity-75 transition-opacity duration-200 uppercase">About us</a>
+    <a href="view.html" class="text-sm font-medium text-brandGreen hover:opacity-75 transition-opacity duration-200 uppercase">Courses</a>
+    <a href="#admissions" class="text-sm font-medium text-brandGreen hover:opacity-75 transition-opacity duration-200 uppercase">Admissions</a>
+    <a href="Affiliated.html" class="text-sm font-medium text-brandGreen hover:opacity-75 transition-opacity duration-200 uppercase">Affiliated to</a>
+    <!-- <button aria-label="Search" class="text-white-400 hover:opacity-75 transition-opacity duration-200">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+        </svg>
+    </button> -->
+</div>
+
+        <!-- Mobile Menu Toggler -->
+        <div class="md:hidden">
+            <button id="mobile-menu-toggler" class="text-gray-800 focus:outline-none" aria-label="Open menu">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu Panel -->
+<div id="mobile-menu-panel" class="hidden md:hidden fixed inset-0 z-40">
+    <div class="fixed inset-0 bg-black bg-opacity-25 mobile-menu-overlay" aria-hidden="true"></div>
+    <div class="mobile-menu-content fixed inset-y-0 right-0 w-full max-w-xs bg-white  shadow-xl p-6 transform transition ease-in-out duration-300 translate-x-full">
+        <div class="flex items-center justify-between mb-8">
+            <a href="index.html" class="block">
+                <img src="images/Highland_College_of_Nursing_PDF_-1-removebg-preview.png" alt="ORTHOC Logo" class="h-8">
+            </a>
+            <button id="close-mobile-menu" class="text-gray-800 hover:opacity-75">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+      <nav class="flex flex-col space-y-4">
+    <a href="index.html" class="text-brandGreen text-base font-medium hover:opacity-75 uppercase py-2">Home</a>
+    <a href="about.html" class="text-brandGreen text-base font-medium hover:opacity-75 uppercase py-2">About</a>
+    <a href="#departments" class="text-brandGreen text-base font-medium hover:opacity-75 uppercase py-2">Courses</a>
+    <a href="#admissions" class="text-brandGreen text-base font-medium hover:opacity-75 uppercase py-2">Admissions</a>
+    <a href="Affiliated.html" class="text-brandGreen text-base font-medium hover:opacity-75 uppercase py-2">Affiliated to</a>
+    <!-- <button aria-label="Search" class="text-white-300 hover:opacity-75 flex items-center space-x-2 uppercase py-2">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+        </svg>
+        <span>Search</span>
+    </button> -->
+</nav>
+
+    </div>
+</div>
+
+<!-- Hero Section -->
+<div class="flex-grow flex items-center relative z-10 pt-24 md:pt-0"> 
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative"> <!-- Container with relative positioning -->
+
+        <!-- Background Logo Popup (hidden by default) -->
+<div id="background-logo" class="hidden md:block absolute right-[5%] top-1/2 transform -translate-y-1/2 group cursor-pointer">
+
+  <!-- Shadow card behind -->
+  <div class="absolute top-4 left-4 w-96 h-auto rounded-lg
+              bg-black bg-opacity-60  <!-- increased opacity from 30% to 60% -->
+              shadow-2xl               <!-- stronger shadow -->
+              transition-shadow duration-300
+              group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.9)]  <!-- even darker on hover -->
+              pointer-events-none">
+  </div>
+
+  <!-- Main card with logo -->
+  <div class="relative w-96 rounded-lg p-6
+              bg-white bg-opacity-90
+              shadow-2xl
+              backdrop-blur-md
+              transition-transform duration-300
+              group-hover:scale-105">
+    <img src="images/Highland_College_of_Nursing_PDF_-1-removebg-preview.png" alt="Background Logo" class="w-96 h-auto rounded-lg" />
+  </div><br>
+<div>
+        <a href="contact.html"
+           class="inline-block bg-white bg-opacity-20
+ text-white font-semibold py-3 px-8 rounded-full shadow-lg  hover:opacity-75 transition-colors duration-300">
+            Contact Us
+        </a>
+    </div>
+</div>
+
+<!-- Static Contact Button -->
+
+
+<!-- No JavaScript is needed for this button. -->
+
+        <div class="flex flex-col md:flex-row items-center md:items-start lg:items-center -mx-4">
+            <!-- Left Text Content Area (Slider Content) -->
+            <div class="w-full md:w-7/12 px-4 text-center md:text-left mb-10 md:mb-0 pb-0 md:pb-12 lg:pb-0">
+                <div id="hero-slider-content" class="relative min-h-[280px] sm:min-h-[320px] md:min-h-[300px]">
+                    <!-- Slide 1 -->
+                    <div class="hero-slide transition-opacity duration-700 ease-in-out">
+                        <h1 class="text-4xl sm:text-5xl lg:text-[50px] xl:text-[52px] font-bold leading-tight mb-5 sm:mb-6 uppercase">
+                        Welcome to Highland College of Nursing
+                        </h1>
+                        <p class="text-sm sm:text-base leading-relaxed mb-8 max-w-xl mx-auto md:mx-0 opacity-95">
+At Highland College of Nursing, we are committed to shaping the future of healthcare through quality education, compassionate service, and innovation. Our vision is to nurture skilled professionals who make a lasting impact in the field of health sciences—locally and globally.                        </p>
+                        <!-- <a href="#" class="inline-block bg-white text-brandGreen font-semibold py-3 px-8 sm:px-10 rounded hover:bg-gray-100 transition duration-300 shadow-md text-sm uppercase tracking-wider">
+                            Read More
+                        </a> -->
+                    </div>
+                    <!-- Slide 2 -->
+                    <!-- <div class="hero-slide absolute top-0 left-0 w-full opacity-0 transition-opacity duration-700 ease-in-out pointer-events-none">
+                        <h1 class="text-4xl sm:text-5xl lg:text-[50px] xl:text-[52px] font-bold leading-tight mb-5 sm:mb-6 uppercase">
+                            Advanced Medical Technology
+                        </h1>
+                        <p class="text-sm sm:text-base leading-relaxed mb-8 max-w-xl mx-auto md:mx-0 opacity-95">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                        </p>
+                        <a href="#" class="inline-block bg-white text-brandGreen font-semibold py-3 px-8 sm:px-10 rounded hover:bg-gray-100 transition duration-300 shadow-md text-sm uppercase tracking-wider">
+                            Learn More
+                        </a>
+                    </div> -->
+                    <!-- Slide 3 -->
+                    <!-- <div class="hero-slide absolute top-0 left-0 w-full opacity-0 transition-opacity duration-700 ease-in-out pointer-events-none">
+                        <h1 class="text-4xl sm:text-5xl lg:text-[50px] xl:text-[52px] font-bold leading-tight mb-5 sm:mb-6 uppercase">
+                            Expert Doctors & Staff
+                        </h1>
+                        <p class="text-sm sm:text-base leading-relaxed mb-8 max-w-xl mx-auto md:mx-0 opacity-95">
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                        </p>
+                        <a href="#" class="inline-block bg-white text-brandGreen font-semibold py-3 px-8 sm:px-10 rounded hover:bg-gray-100 transition duration-300 shadow-md text-sm uppercase tracking-wider">
+                            Meet Our Team
+                        </a>
+                    </div> -->
+                </div>
+
+                <!-- Slider Dots -->
+                <!-- <div id="hero-slider-dots" class="flex justify-center md:justify-start space-x-2.5 mt-8 sm:mt-10">
+                    <button class="w-3 h-3 bg-white rounded-full focus:outline-none slider-dot-active" aria-label="Go to slide 1"></button>
+                    <button class="w-3 h-3 bg-white/50 rounded-full focus:outline-none slider-dot-inactive" aria-label="Go to slide 2"></button>
+                    <button class="w-3 h-3 bg-white/50 rounded-full focus:outline-none slider-dot-inactive" aria-label="Go to slide 3"></button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+                <!-- Right Image Area (Optional - from original Themewagon Orthoc template, often a doctor image here) -->
+                <!-- If you had an image on the right in Bootstrap like <div class="col-md-5"><img></div>, you'd add it here -->
+                <!-- <div class="w-full md:w-5/12 px-4 hidden md:flex justify-center md:justify-end self-end">
+                    <img src="images/slider-img.png" alt="Doctor" class="max-w-md lg:max-w-lg h-auto object-contain">
+                </div> -->
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Mobile Menu Logic ---
+        const mobileMenuToggler = document.getElementById('mobile-menu-toggler');
+        const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+        const mobileMenuContent = mobileMenuPanel.querySelector('.mobile-menu-content');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+        const overlay = mobileMenuPanel.querySelector('.mobile-menu-overlay');
+
+        function openMenu() {
+            mobileMenuPanel.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenuContent.classList.remove('translate-x-full');
+                overlay.classList.remove('opacity-0'); // Assuming it starts at 0
+                overlay.classList.add('opacity-25');
+            }, 10);
+        }
+
+        function closeMenu() {
+            mobileMenuContent.classList.add('translate-x-full');
+            overlay.classList.remove('opacity-25');
+            overlay.classList.add('opacity-0');
+            setTimeout(() => {
+                mobileMenuPanel.classList.add('hidden');
+            }, 300);
+        }
+
+        if (mobileMenuToggler) {
+            mobileMenuToggler.addEventListener('click', openMenu);
+            closeMobileMenu.addEventListener('click', closeMenu);
+            overlay.addEventListener('click', closeMenu);
+            // Initial state for overlay if not set via class
+            if (!overlay.classList.contains('opacity-0') && !overlay.classList.contains('opacity-25')) {
+                overlay.classList.add('opacity-0');
+            }
+            overlay.classList.add('transition-opacity', 'duration-300', 'ease-in-out');
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+        const bgLogo = document.getElementById('background-logo');
+        bgLogo.classList.add('opacity-100');
+    });
+        // --- Hero Slider Logic ---
+        const heroSlides = document.querySelectorAll('#hero-slider-content .hero-slide');
+        const heroDots = document.querySelectorAll('#hero-slider-dots button');
+        const heroSliderContentEl = document.getElementById('hero-slider-content'); // Renamed to avoid conflict
+
+        if (heroSlides.length > 0 && heroDots.length > 0 && heroSliderContentEl) {
+            let currentSlideIndex = 0;
+            let slideInterval;
+            const slideDuration = 5000; // 5 seconds per slide
+
+            const activeDotClass = 'slider-dot-active';
+            const inactiveDotClass = 'slider-dot-inactive';
+
+            function showSlide(index) {
+                heroSlides.forEach((slide, i) => {
+                    slide.classList.add('opacity-0', 'pointer-events-none');
+                    if (i !== 0) {
+                        slide.classList.add('absolute', 'top-0', 'left-0', 'w-full');
+                    }
+                });
+
+                const activeSlide = heroSlides[index];
+                activeSlide.classList.remove('opacity-0', 'pointer-events-none');
+                 if (index !== 0 && !activeSlide.classList.contains('absolute')) {
+                    activeSlide.classList.add('absolute', 'top-0', 'left-0', 'w-full');
+                }
+
+
+                heroDots.forEach((dot, i) => {
+                    dot.classList.remove(activeDotClass, 'bg-white');
+                    dot.classList.add(inactiveDotClass, 'bg-white/50');
+                    if (i === index) {
+                        dot.classList.remove(inactiveDotClass, 'bg-white/50');
+                        dot.classList.add(activeDotClass, 'bg-white');
+                    }
+                });
+                currentSlideIndex = index;
+            }
+
+            function nextSlide() {
+                let nextIndex = (currentSlideIndex + 1) % heroSlides.length;
+                showSlide(nextIndex);
+            }
+
+            function startSlideShow() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, slideDuration);
+            }
+
+            heroDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                    startSlideShow();
+                });
+            });
+
+            showSlide(0);
+            startSlideShow();
+
+            heroSliderContentEl.addEventListener('mouseenter', () => clearInterval(slideInterval));
+            heroSliderContentEl.addEventListener('mouseleave', startSlideShow);
+        } else {
+            console.warn("Hero slider elements not found. Slider functionality will not be initialized.");
+        }
+    });
+</script>
+
+<section id="about-us-section" class="py-16 lg:py-24 bg-transparent">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center -mx-4">
+            <!-- Image Column -->
+            <div class="w-full md:w-1/2 px-4 mb-8 md:mb-0 flex justify-center">
+                <img src="images/nurse.png" alt="Doctor in an office" class="w-2/3 h-auto object-cover"> <!-- Slightly smaller width -->
+            </div>
+
+            <!-- Text Content Column -->
+            <div class="w-full md:w-1/2 px-4 md:pl-8 lg:pl-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 uppercase tracking-wider mb-6">
+                    ABOUT US
+                </h2>
+                <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-8">
+<h6 class="text-3xl md:text-4xl font-bold text-gray-900 uppercase tracking-wider mb-6">
+               History & Background </h6>
+Highland College of Nursing is a proud initiative of Mariam Educational Trust, which has been dedicated to the field of education for over two decades. The Trust is known for its unwavering commitment to academic excellence, value-based learning, and community development. The establishment of Highland College of Nursing marks a bold step forward in healthcare education, aiming to produce highly skilled and ethically grounded nursing professionals.
+                </p><br>
+                <a href="about.html" class="inline-block bg-[#54c5bc] text-white font-semibold py-3 px-8 rounded-md hover:bg-[#4aa7a1] transition duration-300 uppercase text-sm tracking-wider shadow hover:shadow-lg">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section id="departments" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-12 lg:mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 uppercase tracking-wider">
+                OUR COURSES
+            </h2>
+            <p class="mt-4 text-gray-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+A comprehensive program designed to prepare confident, competent, and compassionate nursing professionals ready to meet the evolving needs of the healthcare industry.            </p>
+        </div>
+
+        <!-- Featured Course: B.Sc Nursing -->
+        <div class="mb-16 bg-gradient-to-r from-[#54c5bc] to-[#4aa7a1] rounded-lg p-8 text-white">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mr-4">
+                            <!-- Nursing Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold uppercase tracking-wide">
+                            Bachelor of Science in Nursing
+                        </h3>
+                    </div>
+                    <p class="text-lg mb-6 leading-relaxed">
+                        A foundational program designed to prepare students for a rewarding career in nursing, combining academic excellence with clinical competence. Students will undergo a structured curriculum with hands-on experience in real healthcare settings.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-white/10 rounded-lg p-4">
+                            <h4 class="font-semibold mb-2">Duration</h4>
+                            <p class="text-sm">4 Years</p>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-4">
+                            <h4 class="font-semibold mb-2">Eligibility</h4>
+                            <p class="text-sm">NEET Qualified candidates</p>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4 mb-6">
+                        <h4 class="font-semibold mb-2">Payment Options</h4>
+                        <p class="text-sm">Flexible payment methods accepted, including cash, bank transfers, and digital payment platforms.</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="images/ghibi nurse.png" alt="B.Sc Nursing Course Information" class="rounded-lg shadow-lg mb-6 w-full max-w-md mx-auto">
+                    <div class="space-y-3">
+                        <a href="images/Highland college of Nursing.pdf" class="block w-full bg-white text-[#54c5bc] font-semibold py-3 px-6 rounded-md hover:bg-gray-100 transition duration-300 uppercase text-sm tracking-wider shadow text-center">
+    Download Brochure
+</a>
+                        <a href="images/Application Form (1).pdf" class="w-full bg-white/20 text-white font-semibold py-3 px-6 rounded-md hover:bg-white/30 transition duration-300 uppercase text-sm tracking-wider border border-white/30 block text-center no-underline mb-4">
+            Application Form for Admission
+        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Other Departments Grid -->
+        <!-- <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10"> -->
+            <!-- Department Card 1: Cardiology -->
+            <!-- <div class="text-center flex flex-col items-center p-4">
+                <div class="w-20 h-20 rounded-full bg-[#54c5bc] flex items-center justify-center mb-5 shadow-md"> -->
+                    <!-- Cardiology Icon -->
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-white">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-800 uppercase mb-2 tracking-wide">CARDIOLOGY</h3>
+                <p class="text-sm text-gray-600 px-2 leading-relaxed">
+                    Specialized training in cardiovascular care and heart health management for nursing professionals.
+                </p>
+            </div> -->
+
+            <!-- Department Card 2: Diagnosis -->
+            <!-- <div class="text-center flex flex-col items-center p-4">
+                <div class="w-20 h-20 rounded-full bg-[#54c5bc] flex items-center justify-center mb-5 shadow-md"> -->
+                    <!-- Diagnosis Icon -->
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-white">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-800 uppercase mb-2 tracking-wide">DIAGNOSIS</h3>
+                <p class="text-sm text-gray-600 px-2 leading-relaxed">
+                    Clinical assessment and diagnostic skills essential for effective patient care and treatment planning.
+                </p>
+            </div> -->
+
+            <!-- Department Card 3: Surgery -->
+            <!-- <div class="text-center flex flex-col items-center p-4">
+                <div class="w-20 h-20 rounded-full bg-[#54c5bc] flex items-center justify-center mb-5 shadow-md"> -->
+                    <!-- Surgery Icon (Scissors) -->
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-white">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 15C7.5 16.933 9.06701 18.5 11 18.5C12.933 18.5 14.5 16.933 14.5 15C14.5 13.067 12.933 11.5 11 11.5C9.06701 11.5 7.5 13.067 7.5 15Z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 5L11 11.5M16 5L11 11.5" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.5C7.5 10.433 9.06701 12 11 12C12.933 12 14.5 10.433 14.5 8.5C14.5 6.567 12.933 5 11 5C9.06701 5 7.5 6.567 7.5 8.5Z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-800 uppercase mb-2 tracking-wide">SURGERY</h3>
+                <p class="text-sm text-gray-600 px-2 leading-relaxed">
+                    Perioperative nursing care and surgical assistance training for operating room environments.
+                </p>
+            </div> -->
+
+            <!-- Department Card 4: First Aid -->
+            <!-- <div class="text-center flex flex-col items-center p-4">
+                <div class="w-20 h-20 rounded-full bg-[#54c5bc] flex items-center justify-center mb-5 shadow-md"> -->
+                    <!-- First Aid Icon (Plus) -->
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-white">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-800 uppercase mb-2 tracking-wide">FIRST AID</h3>
+                <p class="text-sm text-gray-600 px-2 leading-relaxed">
+                    Emergency response and critical care skills for immediate patient stabilization and care.
+                </p>
+            </div>
+        </div> -->
+
+        <!-- View All Button -->
+        <div class="text-center mt-12 lg:mt-16">
+            <a href="view.html" class="inline-block bg-[#54c5bc] text-white font-semibold py-3 px-10 rounded-md hover:bg-[#4aa7a1] transition duration-300 uppercase text-sm tracking-wider shadow hover:shadow-lg">
+                View All Courses
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ADMISSIONS SECTION STARTS HERE -->
+<section id="admissions" class="relative py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-12 lg:mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 uppercase tracking-wider">ADMISSIONS</h2>
+            <p class="mt-4 text-gray-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+                Join our prestigious nursing program and start your journey towards a rewarding healthcare career.
+            </p>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-12">
+            <!-- Left Column - Admission Requirements -->
+            <div>
+                <h3 class="text-2xl font-bold text-gray-900 uppercase tracking-wide mb-6">Admission Requirements</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="w-6 h-6 rounded-full bg-[#54c5bc] flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">10+2 (Science Stream)</h4>
+                            <p class="text-sm text-gray-600">Applicants must have successfully passed their higher secondary education in the science stream.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="w-6 h-6 rounded-full bg-[#54c5bc] flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">NEET Qualification</h4>
+                            <p class="text-sm text-gray-600">A valid score in the National Eligibility cum Entrance Test (NEET) is a mandatory requirement.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="w-6 h-6 rounded-full bg-[#54c5bc] flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">Document Submission</h4>
+                            <p class="text-sm text-gray-600">Submission of relevant academic certificates (10+2 marks card), NEET scorecard, and identity proof.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Application Process -->
+            <div>
+                <h3 class="text-2xl font-bold text-gray-900 uppercase tracking-wide mb-6">Application Process</h3>
+                <div class="space-y-6">
+                    <div class="flex">
+                        <div class="w-8 h-8 rounded-full bg-[#54c5bc] flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-white font-bold text-sm">1</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Download Application Form</h4>
+                            <p class="text-sm text-gray-600">Begin by downloading the official application form from our website.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <div class="w-8 h-8 rounded-full bg-[#54c5bc] flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-white font-bold text-sm">2</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Fill Out the Form</h4>
+                            <p class="text-sm text-gray-600">Carefully complete the form with all the required and accurate information.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <div class="w-8 h-8 rounded-full bg-[#54c5bc] flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-white font-bold text-sm">3</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Contact Admissions Office</h4>
+                            <p class="text-sm text-gray-600">Our team will guide you on the submission process and any further steps required.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Online Application Notice -->
+        <div class="bg-teal-50 border-l-4 border-[#54c5bc] text-teal-800 p-6 rounded-r-lg shadow-md mb-16">
+            <div class="flex">
+                <div class="py-1">
+                    <svg class="w-6 h-6 text-[#54c5bc] mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <div>
+                    <h4 class="font-bold">Online Application Form</h4>
+                    <p class="text-sm">The portal for online applications is coming soon. Please check back later for updates.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQs Section -->
+        <div class="bg-white rounded-lg shadow-lg p-8 lg:p-12 mb-16">
+            <h3 class="text-2xl font-bold text-gray-900 uppercase tracking-wide mb-8 text-center">Frequently Asked Questions</h3>
+            <div class="max-w-3xl mx-auto space-y-8">
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Q1: Is NEET qualification mandatory for admission?</h4>
+                    <p class="text-gray-600 pl-6 border-l-2 border-gray-200">Yes, NEET qualification is a mandatory requirement for B.Sc Nursing admission as per the latest guidelines.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Q2: Can I pay the fees in installments?</h4>
+                    <p class="text-gray-600 pl-6 border-l-2 border-gray-200">Yes, we offer flexible payment options. You may contact the admissions office for a customized payment plan.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Q3: Is hostel accommodation available?</h4>
+                    <p class="text-gray-600 pl-6 border-l-2 border-gray-200">Details about hostel facilities and availability will be provided to confirmed students during the admission counseling process.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Q4: What documents are required at the time of application?</h4>
+                    <p class="text-gray-600 pl-6 border-l-2 border-gray-200">You will need to submit your NEET scorecard, 10+2 marks card, a valid government-issued ID proof, and recent passport-sized photographs.</p>
+                </div>
+                 <div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Q5: When do classes start for the 2025 batch?</h4>
+                    <p class="text-gray-600 pl-6 border-l-2 border-gray-200">The academic calendar and official start date for the 2025 batch will be announced soon. Please stay updated through our website.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Take the First Step</h3>
+            <p class="text-gray-600 mb-8 max-w-xl mx-auto">
+                Your journey towards becoming a healthcare professional starts here. Download the application form to begin.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="images/Application Form (1).pdf" download="Highland-College-Application-Form.pdf" class="inline-block bg-[#54c5bc] text-white font-semibold py-3 px-8 rounded-md hover:bg-[#4aa7a1] transition duration-300 uppercase text-sm tracking-wider shadow hover:shadow-lg">
+                    Download Application Form
+                </a>
+                <a href="images/Highland college of Nursing.pdf" download="Highland-College-Brochure.pdf" class="inline-block border-2 border-[#54c5bc] text-[#54c5bc] font-semibold py-3 px-8 rounded-md hover:bg-[#54c5bc] hover:text-white transition duration-300 uppercase text-sm tracking-wider">
+                    Download Brochure
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ADMISSIONS SECTION ENDS HERE -->
+
+
+<!-- ===================================================================== -->
+<!-- BACK TO TOP BUTTON AND SCRIPT                                         -->
+<!-- The button is positioned relative to the viewport, not the section,   -->
+<!-- but the script should be placed after the HTML content of your page.  -->
+<!-- ===================================================================== -->
+
+<!-- === Floating Action Buttons === -->
+
+
+<!-- "Contact Us" Floating Link -->
+<a id="floating-contact-btn" 
+   href="contact.html"
+   class="fixed bottom-24 right-8 z-50 
+          inline-block bg-[#54c5bc] text-white font-semibold py-3 px-8 rounded-full shadow-lg 
+          hover:bg-[#4aa7a1] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/50 
+          opacity-0 scale-95 transform transition-all duration-300 ease-in-out">
+    Contact Us
+</a>
+
+<!-- "Back to Top" Floating Button -->
+<button id="back-to-top-btn" 
+        class="fixed bottom-8 right-8 z-50 
+               bg-[#54c5bc] text-white rounded-full p-3 shadow-lg 
+               hover:bg-[#4aa7a1] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#54c5bc] 
+               opacity-0 scale-95 transform transition-all duration-300 ease-in-out"
+        aria-label="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+    </svg>
+</button>
+
+<script>
+    (() => {
+        // Get both buttons by their unique IDs
+        const backToTopBtn = document.getElementById('back-to-top-btn');
+        const contactBtn = document.getElementById('floating-contact-btn');
+
+        // This function handles the show/hide logic for both buttons on scroll
+        const handleScroll = () => {
+            // Check if the page has been scrolled more than 300 pixels
+            const isScrolled = window.scrollY > 300;
+
+            // Toggle visibility classes for Back to Top button
+            if (backToTopBtn) {
+                backToTopBtn.classList.toggle('opacity-100', isScrolled);
+                backToTopBtn.classList.toggle('scale-100', isScrolled);
+                backToTopBtn.classList.toggle('opacity-0', !isScrolled);
+                backToTopBtn.classList.toggle('scale-95', !isScrolled);
+            }
+
+            // Toggle visibility classes for Contact button
+            if (contactBtn) {
+                contactBtn.classList.toggle('opacity-100', isScrolled);
+                contactBtn.classList.toggle('scale-100', isScrolled);
+                contactBtn.classList.toggle('opacity-0', !isScrolled);
+                contactBtn.classList.toggle('scale-95', !isScrolled);
+            }
+        };
+
+        // This function handles the smooth scroll for the "Back to Top" button
+        const scrollToTop = () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });            
+        };
+
+        // Add the event listeners IF the buttons exist
+        window.addEventListener('scroll', handleScroll);
+        
+        if (backToTopBtn) {
+            backToTopBtn.addEventListener('click', scrollToTop);
+        }
+
+        // Also run the scroll check once on page load to set the initial state
+        handleScroll();
+
+    })();
+</script>
+
+<footer id="contact" class="bg-brandGreen text-white"> 
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+        <!-- Grid for the three main columns -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12 mb-12 lg:mb-16">
+            
+            <!-- Column 1: Reach at.. -->
+            <div>
+                <h3 class="text-xl font-semibold mb-6">Reach us at..</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-start text-sm">
+                        <i class="fas fa-map-marker-alt mt-1 w-5 text-center mr-3 flex-shrink-0" aria-hidden="true"></i>
+                        <span>Highland Hospital,<br>
+Highlands, Mother Theresa Road,<br>
+Mangalore – 575002
+</span>
+                    </li>
+                    <li class="flex items-start text-sm">
+                        <i class="fas fa-phone-alt mt-1 w-5 text-center mr-3 flex-shrink-0" aria-hidden="true"></i>
+                        <span>Phone: +91 87400 05555</span>
+                    </li>
+                    <li class="flex items-start text-sm">
+                        <i class="fas fa-envelope mt-1 w-5 text-center mr-3 flex-shrink-0" aria-hidden="true"></i>
+                        <span>Email: reachus@highlandcollegeofnursing.com</span>
+                    </li>
+                </ul>
+                <div class="flex space-x-4 mt-6">
+                    <a href="#" aria-label="Facebook" class="text-white hover:text-white/80 transition-colors duration-300">
+                        <i class="fab fa-facebook-f text-lg" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" aria-label="Twitter" class="text-white hover:text-white/80 transition-colors duration-300">
+                        <i class="fab fa-twitter text-lg" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn" class="text-white hover:text-white/80 transition-colors duration-300">
+                        <i class="fab fa-linkedin-in text-lg" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram" class="text-white hover:text-white/80 transition-colors duration-300">
+                        <i class="fab fa-instagram text-lg" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Links -->
+            <div>
+                <h3 class="text-xl font-semibold mb-6">Links</h3>
+                <div class="space-y-2 text-sm">
+                    <a href="index.html" class="block hover:text-white/80 hover:underline transition-colors duration-300">Home</a>
+                    <a href="#about-us-section" class="block hover:text-white/80 hover:underline transition-colors duration-300">About</a>
+                    <a href="departments.html" class="block hover:text-white/80 hover:underline transition-colors duration-300">Courses</a>
+                    <a href="doctors.html" class="block hover:text-white/80 hover:underline transition-colors duration-300">Admissions</a>
+                    <a href="Affiliated.html" class="block hover:text-white/80 hover:underline transition-colors duration-300">Affiliated to</a>
+                </div>
+            </div>
+
+            <!-- Column 3: Newsletter -->
+            <div>
+                <h3 class="text-xl font-semibold mb-6">Newsletter</h3>
+                <form action="#">
+                    <input type="email" placeholder="Enter email" 
+                           class="w-full p-3 rounded-md bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-400 mb-3 text-sm" 
+                           aria-label="Email for newsletter">
+                    <button type="submit" 
+                            class="w-full bg-[#6bcfc5] hover:bg-[#5ab9b1] text-white font-semibold py-3 px-4 rounded-md transition duration-300 text-sm uppercase tracking-wider">
+                        Subscribe
+                    </button>
+                </form>
+                <!-- Office Hours -->
+                <div class="mt-6">
+                    <p class="text-sm text-gray-200 leading-relaxed">Our office is open Monday to Saturday from 9:00 AM to 5:00 PM.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="border-t border-white/20 pt-8 text-center">
+            <p class="text-sm text-gray-300 mb-1">
+                © <span id="current-year">2025</span> All Rights Reserved By Highland College of Nursing
+            </p>
+        </div>
+    </div>
+</footer>
+<script>
+    // Script to set the current year in the footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // You might already have a DOMContentLoaded listener from the header script.
+    // If so, you can add the year update logic into that existing listener.
+    // For example:
+    // document.addEventListener('DOMContentLoaded', () => {
+    //     // ... existing header script logic ...
+    //     document.getElementById('current-year').textContent = new Date().getFullYear();
+    // });
+</script>
+</body>
+</html>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.Sc Nursing Admission Application - Highland College of Nursing</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'nursing-teal': '#54c5bc',
+                        'nursing-teal-dark': '#4aa7a1'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-nursing-teal to-nursing-teal-dark text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">Highland College of Nursing</h1>
+            <p class="text-lg opacity-90">(Under Mariam Educational Trust)</p>
+            <h2 class="text-xl md:text-2xl font-semibold mt-4">Application for Admission – B.Sc Nursing Program (2025)</h2>
+        </div>
+    </div>
+
+    <!-- Form Container -->
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <form id="admissionForm" class="space-y-8">
+            <!-- Personal Details Section -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-nursing-teal flex items-center justify-center mr-4">
+                        <span class="text-white font-bold">1</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Personal Details</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Full Name (as per 10th Certificate) <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" name="fullName" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Date of Birth <span class="text-red-500">*</span>
+                        </label>
+                        <input type="date" name="dateOfBirth" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Gender <span class="text-red-500">*</span>
+                        </label>
+                        <div class="flex space-x-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="gender" value="male" required class="mr-2 text-nursing-teal">
+                                <span>Male</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="gender" value="female" required class="mr-2 text-nursing-teal">
+                                <span>Female</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="gender" value="other" required class="mr-2 text-nursing-teal">
+                                <span>Other</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Nationality</label>
+                        <input type="text" name="nationality" value="Indian" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Religion</label>
+                        <input type="text" name="religion" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                        <select name="category" 
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                            <option value="">Select Category</option>
+                            <option value="general">General</option>
+                            <option value="sc">SC</option>
+                            <option value="st">ST</option>
+                            <option value="obc">OBC</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div id="otherCategoryDiv" class="hidden">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Other Category (specify)</label>
+                        <input type="text" name="otherCategory" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Details Section -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-nursing-teal flex items-center justify-center mr-4">
+                        <span class="text-white font-bold">2</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Contact Details</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Mobile Number <span class="text-red-500">*</span>
+                        </label>
+                        <input type="tel" name="mobile" required pattern="[0-9]{10}" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Email ID <span class="text-red-500">*</span>
+                        </label>
+                        <input type="email" name="email" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                    </div>
+                    
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Residential Address <span class="text-red-500">*</span>
+                        </label>
+                        <textarea name="address" rows="3" required 
+                                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            PIN Code <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" name="pincode" required pattern="[0-9]{6}" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parent/Guardian Details Section -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-nursing-teal flex items-center justify-center mr-4">
+                        <span class="text-white font-bold">3</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Parent/Guardian Details</h3>
+                </div>
+                
+                <div class="space-y-6">
+                    <!-- Father's Details -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Father's Name</label>
+                            <input type="text" name="fatherName" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Occupation</label>
+                            <input type="text" name="fatherOccupation" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Contact Number</label>
+                            <input type="tel" name="fatherContact" pattern="[0-9]{10}" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                        </div>
+                    </div>
+                    
+                    <!-- Mother's Details -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Mother's Name</label>
+                            <input type="text" name="motherName" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Occupation</label>
+                            <input type="text" name="motherOccupation" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Contact Number</label>
+                            <input type="tel" name="motherContact" pattern="[0-9]{10}" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                        </div>
+                    </div>
+                    
+                    <!-- Guardian Details -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Guardian (if applicable)</label>
+                            <input type="text" name="guardianName" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Relationship</label>
+                            <input type="text" name="guardianRelationship" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Contact Number</label>
+                            <input type="tel" name="guardianContact" pattern="[0-9]{10}" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic Details Section -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-nursing-teal flex items-center justify-center mr-4">
+                        <span class="text-white font-bold">4</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Academic Details</h3>
+                </div>
+                
+                <!-- Academic Table -->
+                <div class="overflow-x-auto mb-6">
+                    <table class="w-full border-collapse border border-gray-300">
+                        <thead>
+                            <tr class="bg-gray-50">
+                                <th class="border border-gray-300 px-4 py-2 text-left">Exam Passed</th>
+                                <th class="border border-gray-300 px-4 py-2 text-left">Name of Institution</th>
+                                <th class="border border-gray-300 px-4 py-2 text-left">Board/University</th>
+                                <th class="border border-gray-300 px-4 py-2 text-left">Year of Passing</th>
+                                <th class="border border-gray-300 px-4 py-2 text-left">% / Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2 font-medium">SSLC / 10th</td>
+                                <td class="border border-gray-300 px-4 py-2">
+                                    <input type="text" name="sslcInstitution" required 
+                                           class="w-full px-2 py-1 border-0 focus:outline-none focus:ring-1 focus:ring-nursing-teal">
+                                </td>
+                                <td class="border border-gray-300 px-4 py-2">
+                                    <input type="text" name="sslcBoard" required 
+                                           class="w-full px-2 py-1 border-0 focus:outline-none focus:ring-1 focus:ring-nursing-teal">
+                                </td>
+                                <td class="border border-gray-300 px-4 py-2">
+                                    <input type="number" name="sslcYear" required min="2000" max="2025" 
+                                           class="w-full px-2 py-1 border-0 focus:outline-none focus:ring-1 focus:ring-nursing-teal">
+                                </td>
+                                <td class="border border-gray-300 px-4 py-2">
+                                    <input type="text" name="sslcGrade" required 
+                                           class="w-full px-2 py-1 border-0 focus:outline-none focus:ring-1 focus:ring-nursing-teal">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2 font-medium">PUC / 12th</td>
+                                <td class="border border-gray-300 px-4 py-2">
+                                    <input type="text" name="pucInstitution" required 
+                                           class="w-full px-2 py-1 border-0 focus:outline-none focus:ring-1 focus:ring-nursing-teal">
+                                </td>
+                                <td class="border border-gray-300 px-4 py-2">
+                                    <input type="text" name="pucBoard" required 
+                                           class="w-full px-2 py-1 border-0 focus:outline-none focus:ring-1 focus:ring-nursing-teal">
+                                </td>
+                                <td class="border border-gray-300 px-4 py-2">
+                                    <input type="number" name="pucYear" required min="2000" max="2025" 
+                                           class="w-full px-2 py-1 border-0 focus:outline-none focus:ring-1 focus:ring-nursing-teal">
+                                </td>
+                                <td class="border border-gray-300 px-4 py-2">
+                                    <input type="text" name="pucGrade" required 
+                                           class="w-full px-2 py-1 border-0 focus:outline-none focus:ring-1 focus:ring-nursing-teal">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Subjects Studied in 12th <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" name="subjects12th" required placeholder="e.g., Physics, Chemistry, Biology" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            NEET Roll Number <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" name="neetRollNumber" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            NEET Score <span class="text-red-500">*</span>
+                        </label>
+                        <input type="number" name="neetScore" required min="0" max="720" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Information Section -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-nursing-teal flex items-center justify-center mr-4">
+                        <span class="text-white font-bold">5</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Additional Information</h3>
+                </div>
+                
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Are you applying for Hostel Accommodation?
+                        </label>
+                        <div class="flex space-x-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="hostel" value="yes" class="mr-2 text-nursing-teal">
+                                <span>Yes</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="hostel" value="no" class="mr-2 text-nursing-teal">
+                                <span>No</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Any Medical Condition (if any)
+                        </label>
+                        <textarea name="medicalCondition" rows="2" 
+                                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            How did you hear about us?
+                        </label>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="hearAbout" value="website" class="mr-2 text-nursing-teal">
+                                <span>Website</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="hearAbout" value="social-media" class="mr-2 text-nursing-teal">
+                                <span>Social Media</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="hearAbout" value="friend-family" class="mr-2 text-nursing-teal">
+                                <span>Friend/Family</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="hearAbout" value="other" class="mr-2 text-nursing-teal">
+                                <span>Other</span>
+                            </label>
+                        </div>
+                        <div id="otherSourceDiv" class="mt-2 hidden">
+                            <input type="text" name="otherSource" placeholder="Please specify" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Declaration Section -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-nursing-teal flex items-center justify-center mr-4">
+                        <span class="text-white font-bold">6</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Declaration</h3>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-gray-700 leading-relaxed">
+                            I hereby declare that the information provided above is true and correct to the best of my knowledge. 
+                            I understand that providing false information may result in the cancellation of admission.
+                        </p>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <input type="checkbox" name="declaration" required class="mr-3 text-nursing-teal">
+                        <label class="text-sm text-gray-700">
+                            I agree to the above declaration <span class="text-red-500">*</span>
+                        </label>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Digital Signature of Applicant <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" name="applicantSignature" required placeholder="Type your full name" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Digital Signature of Parent/Guardian <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" name="parentSignature" required placeholder="Type parent/guardian full name" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-nursing-teal focus:border-transparent">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" 
+                        class="bg-nursing-teal text-white font-semibold py-4 px-12 rounded-md hover:bg-nursing-teal-dark transition duration-300 uppercase text-lg tracking-wider shadow-lg hover:shadow-xl">
+                    Submit Application
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Success Message (Hidden by default) -->
+    <div id="successMessage" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 max-w-md mx-4 text-center">
+            <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Application Submitted Successfully!</h3>
+            <p class="text-gray-600 mb-4">Thank you for your application. We will contact you soon.</p>
+            <button onclick="closeSuccessMessage()" 
+                    class="bg-nursing-teal text-white px-6 py-2 rounded-md hover:bg-nursing-teal-dark transition duration-300">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Handle category selection
+        document.querySelector('select[name="category"]').addEventListener('change', function() {
+            const otherDiv = document.getElementById('otherCategoryDiv');
+            if (this.value === 'other') {
+                otherDiv.classList.remove('hidden');
+            } else {
+                otherDiv.classList.add('hidden');
+            }
+        });
+
+        // Handle "How did you hear about us" other option
+        document.querySelectorAll('input[name="hearAbout"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const otherDiv = document.getElementById('otherSourceDiv');
+                if (this.value === 'other') {
+                    otherDiv.classList.remove('hidden');
+                } else {
+                    otherDiv.classList.add('hidden');
+                }
+            });
+        });
+
+        // Handle form submission
+        document.getElementById('admissionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const requiredFields = this.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add('border-red-500');
+                } else {
+                    field.classList.remove('border-red-500');
+                }
+            });
+            
+            if (isValid) {
+                // Show success message
+                document.getElementById('successMessage').classList.remove('hidden');
+                
+                // In a real application, you would send the data to a server here
+                console.log('Form data:', new FormData(this));
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+
+        function closeSuccessMessage() {
+            document.getElementById('successMessage').classList.add('hidden');
+            document.getElementById('admissionForm').reset();
+        }
+    </script>
+</body>
+</html>

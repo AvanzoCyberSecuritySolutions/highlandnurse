@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filson-pro/FilsonProBlack.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filson-pro/FilsonProBlackItalic.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filson-pro/FilsonProBold.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filson-pro/FilsonProBoldItalic.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filson-pro/FilsonProBook.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filson-pro/FilsonProBookItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filson-pro/FilsonProHeavy.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filson-pro/FilsonProHeavyItalic.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filson-pro/FilsonProLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filson-pro/FilsonProLightItalic.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filson-pro/FilsonProMedium.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filson-pro/FilsonProMediumItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filson-pro/FilsonProRegular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filson-pro/FilsonProRegularItalic.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filson-pro/FilsonProThin.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filson-pro/FilsonProThinItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+body, * {
+  font-family: 'Filson Pro' !important;
+}
